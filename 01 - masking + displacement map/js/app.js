@@ -32,6 +32,9 @@ class Layer {
 // Dimensions des images telles que récupérées sur lesindépendantes
 var sceneWidth = 900;
 var sceneHeight = 900;
+var displacementFilter;
+var displacementSprite;
+
 
 var DD = {
 	init: function () {
@@ -84,6 +87,12 @@ var DD = {
 		DD.dress.sprite.mask = DD.dressMask.graphics;
 		DD.pixi.stage.addChild(DD.dressMask.graphics);
 		DD.dressMask.update(document.getElementById('js-dress-length-slider').value);
+		
+		// Add a displacement map to the dress, so the mask doesnt make "perfect computer cuts"
+		displacementSprite = PIXI.Sprite.fromImage('../img/displacement-map.png');
+		displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+		DD.pixi.stage.addChild(displacementSprite);
+		DD.dress.sprite.filters = [displacementFilter];
 	},
 	dressMask: {
 		graphics: new PIXI.Graphics(),
