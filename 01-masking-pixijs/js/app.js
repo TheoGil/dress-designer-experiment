@@ -43,9 +43,9 @@ var DD = {
 		document.body.appendChild(DD.pixi.view);
 		
 		PIXI.loader
-		.add('background', 'src/img/model.png')
-		.add('dress', 'src/img/masking-experiments/dress.png')
-		.add('cutout', 'src/img/masking-experiments/model-cutout.png')
+		.add('background', '../img/model.png')
+		.add('dress', '../img/masking-experiments/dress.png')
+		.add('cutout', '../img/masking-experiments/model-cutout.png')
 		.on('progress', DD.loadProgressHandler)
 		.load(DD.onResourcesLoaded);
 		
