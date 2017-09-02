@@ -1,34 +1,31 @@
 class Layer {
-	constructor(name, src) {
+	constructor(resource) {
 		var context = this;
-		this.loader = new PIXI.loaders.Loader();
-		this.sprite = null;
+		this.sprite = new PIXI.Sprite(resource.texture);
 		
-		this.loader.add(name, src).load(function(loader, resources) {
-			context.sprite = new PIXI.Sprite(resources[name].texture);
-			
-			DD.utils.scaleDownIfNeeded(context.sprite);
+		this.scaleDownIfNeeded();
 
-			// Center model in scene
-			context.sprite.x = DD.pixi.renderer.width / 2;
-			context.sprite.y = DD.pixi.renderer.height / 2;
+		// Center model in scene
+		context.sprite.x = DD.pixi.renderer.width / 2;
+		context.sprite.y = DD.pixi.renderer.height / 2;
 
-			// Set model's anchor to it's center so it appears
-			// right in the middle of the screen
-			context.sprite.anchor.x = 0.5;
-			context.sprite.anchor.y = 0.5;
+		// Set model's anchor to it's center so it appears
+		// right in the middle of the screen
+		context.sprite.anchor.x = 0.5;
+		context.sprite.anchor.y = 0.5;
 
-			// Let it be
-			DD.pixi.stage.addChild(context.sprite);
-		});
+		// Let it be
+		DD.pixi.stage.addChild(context.sprite);
 	}
-
-	get area() {
-		return this.calcArea();
-	}
-
-	calcArea() {
-		return this.largeur * this.hauteur;
+	
+	scaleDownIfNeeded () {
+		var maxModelDimension = Math.max(this.sprite.width, this.sprite.height);
+		var minWindowDimension = Math.min(window.innerWidth, window.innerHeight);
+		if (maxModelDimension > minWindowDimension) {
+			var newScale = minWindowDimension / maxModelDimension
+			this.sprite.scale.x = newScale;
+			this.sprite.scale.y = newScale;
+		}
 	}
 }
 
@@ -44,20 +41,44 @@ var DD = {
 			height: sceneHeight
 		});
 		document.body.appendChild(DD.pixi.view);
+		
+		PIXI.loader
+		.add('background', 'src/img/model.png')
+		.add('dress', 'src/img/masking-experiments/dress.png')
+		.add('cutout', 'src/img/masking-experiments/model-cutout.png')
+		.on('progress', DD.loadProgressHandler)
+		.load(DD.onResourcesLoaded);
+		
+		// Create dress mask
+		DD.dressMask = new PIXI.Graphics();
+		DD.pixi.stage.addChild(DD.dressMask);
+		
+		var slider = document.getElementById('js-dress-length-slider');
+		slider.addEventListener('input', function(e){
+			DD.dressMask.clear();
+			DD.dressMask.beginFill(0xFF00BB, 0.25);
+			DD.dressMask.drawRect(0, 0, 900, 290);
+			DD.dressMask.endFill();
+		})
 	},
-	background: new Layer('background', 'src/img/model.png'),
-	dress: new Layer('dress', 'src/img/masking-experiments/dress.png'),
-	model: new Layer('model', 'src/img/masking-experiments/model-cutout.png'),
-	utils: {
-		scaleDownIfNeeded: function(sprite) {
-			var maxModelDimension = Math.max(sprite.width, sprite.height);
-			var minWindowDimension = Math.min(window.innerWidth, window.innerHeight);
-			if (maxModelDimension > minWindowDimension) {
-				var newScale = minWindowDimension / maxModelDimension
-				sprite.scale.x = newScale;
-				sprite.scale.y = newScale;
-			}
-		}
-	}
+	loadProgressHandler: function(loader, resource){
+		// Could later on be used to display a loader!
+		//Display the file `url` currently being loaded
+		console.log("loading: " + resource.name); 
+
+		//Display the precentage of files currently loaded
+		console.log("progress: " + loader.progress + "%");
+	},
+	onResourcesLoaded: function(loader, resources) {
+		// Once every asset is loaded, we can now add them to the screen in the correct order.
+		// pixijs doesn't provide an easy way to explicit a zOrder per texture.
+		// Worth checking out: https://github.com/pixijs/pixi.js/issues/300#issuecomment-86127171
+		// and https://pixijs.github.io/examples/#/display/zorder.js
+		DD.background = new Layer(resources.background);		
+		DD.dress = new Layer(resources.dress);
+		DD.model = new Layer(resources.cutout);
+
+	},
+	dressMask: null,
 }
 DD.init();

@@ -10,9 +10,27 @@
 		canvas {
 			position: fixed;
 		}
+		.dress-length-slider {
+			position: absolute;
+			z-index: 1;
+			top: 620px;
+			left: 430px;
+			width: 350px;
+			transform: rotate(-90deg);
+			transform-origin: left;
+		}
 	</style>
   </head>
-  <body></body>
+  <body>
+  	<input 
+  		id="js-dress-length-slider"
+  		class="dress-length-slider" 
+  		type="range" 
+  		min="0" max="327" 
+  		orient="vertical" 
+  		value="0"
+	>
+  </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
   <script src="src/js/app.js"></script>
 </html>
