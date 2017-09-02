@@ -49,16 +49,18 @@ var DD = {
 		.on('progress', DD.loadProgressHandler)
 		.load(DD.onResourcesLoaded);
 		
-		// Create dress mask
-		DD.dressMask = new PIXI.Graphics();
-		DD.pixi.stage.addChild(DD.dressMask);
-		
 		var slider = document.getElementById('js-dress-length-slider');
 		slider.addEventListener('input', function(e){
-			DD.dressMask.clear();
-			DD.dressMask.beginFill(0xFF00BB, 0.25);
-			DD.dressMask.drawRect(0, 0, 900, 290);
-			DD.dressMask.endFill();
+			DD.dressMask.update(this.value);
+		})
+		
+		var toggleMaskBtn = document.getElementById('js-toggle-mask-btn');
+		toggleMaskBtn.addEventListener('click', function(e){
+			if (DD.dress.sprite.mask) {
+				DD.dress.sprite.mask = null
+			} else {
+				DD.dress.sprite.mask = DD.dressMask.graphics
+			}
 		})
 	},
 	loadProgressHandler: function(loader, resource){
@@ -77,8 +79,22 @@ var DD = {
 		DD.background = new Layer(resources.background);		
 		DD.dress = new Layer(resources.dress);
 		DD.model = new Layer(resources.cutout);
-
+		
+		// Set up the mask
+		DD.dress.sprite.mask = DD.dressMask.graphics;
+		DD.pixi.stage.addChild(DD.dressMask.graphics);
+		DD.dressMask.update(document.getElementById('js-dress-length-slider').value);
 	},
-	dressMask: null,
+	dressMask: {
+		graphics: new PIXI.Graphics(),
+		minHeight: 290,
+		update: function(value) {
+			value = value ? parseInt(value) : 0;
+			DD.dressMask.graphics.clear();
+			DD.dressMask.graphics.beginFill(0xFF00BB, 0.25);
+			DD.dressMask.graphics.drawRect(0, 0, sceneWidth, this.minHeight + value);
+			DD.dressMask.graphics.endFill();
+		}
+	},
 }
 DD.init();

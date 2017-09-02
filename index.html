@@ -13,23 +13,33 @@
 		.dress-length-slider {
 			position: absolute;
 			z-index: 1;
-			top: 620px;
+			top: 274px;
 			left: 430px;
 			width: 350px;
-			transform: rotate(-90deg);
+			transform: rotate(90deg);
 			transform-origin: left;
+		}
+		.toggle-mask-btn {
+			position: absolute;
+			z-index: 1;
+			top: 10px;
+			left: 10px;
 		}
 	</style>
   </head>
   <body>
+    <!-- -->
   	<input 
   		id="js-dress-length-slider"
   		class="dress-length-slider" 
   		type="range" 
-  		min="0" max="327" 
+  		min="0" max="350" 
   		orient="vertical" 
-  		value="0"
+  		value="350"
 	>
+	<button id="js-toggle-mask-btn" class="toggle-mask-btn">
+		Toggle masking
+	</button>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
   <script src="src/js/app.js"></script>
