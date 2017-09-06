@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dress designer - 01 Masking with PixiJS</title>
+    <style>
+		body {
+			margin: 0;
+		}
+		canvas {
+			position: fixed;
+		}
+		.dress-length-slider {
+			position: absolute;
+			z-index: 1;
+			top: 274px;
+			left: 430px;
+			width: 350px;
+			transform: rotate(90deg);
+			transform-origin: left;
+		}
+		.toggle-mask-btn {
+			position: absolute;
+			z-index: 1;
+			top: 10px;
+			left: 10px;
+		}
+		#sleeves-1-mask {
+			display: none;
+		}
+		#sleeves-mask {
+			position: absolute;
+			z-index: 10;
+			//background: rgba(255, 0, 0, .5);
+			opacity: 0;
+			pointer-events: none;
+		}
+	</style>
+  </head>
+  <body>
+	<input
+	id="js-dress-length-slider"
+	class="dress-length-slider"
+	type="range"
+	min="0" max="350"
+	orient="vertical"
+	value="350"
+	>
+	<button id="js-toggle-mask-btn" class="toggle-mask-btn">
+	Toggle masking
+	</button>
+	<select id="js-select-sleeves">
+		<option data-maskid="sleeves-1-mask">Sans manches</option>
+		<option data-maskid="sleeves-2-mask">Avec manches</option>
+	</select>
+	<svg id="sleeves-1-mask" xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 400 400">
+		<path fill-rule="evenodd" d="M0 200v200h400V0H0v200M106 67v7l-6.5 3.2C94 80 93 80.8 93 83l-1 14c-.7 6.3-1.3 21.4-1.4 33.5-.3 20.8-.5 22.6-3.3 33.6-3.8 14.6-5 22.7-6 36.4L81 211H61V60h45v7m71 68.5V211h-20.6l-1.2-17.2c-1.5-20.2-2.8-31-4.7-39.3-.7-3.4-1.6-15.5-2-27.5-.3-11.8-1.2-26.2-2-32-.8-5.8-1.6-12.3-1.7-14.5-.3-3.8-.5-4-5.3-5.8l-5-1.8.3-6.6.4-6.5H177v75.4M269.2 65c.3 4.5 0 5-2.2 6-1.4.4-5.2 2-8.6 3l-6 2.3-1 10.6c-.6 5.6-1.2 22-1.3 36 0 14-.2 25.6-.4 26-.2.2-.8 5-1.5 10.4-.5 5.5-1.6 13.4-2.4 17.5-.7 4-1.5 13.4-1.6 20.7l-.3 13.2H211V60h57.8l.4 5m67.8 70.5V211h-9c-5 0-9-.3-9-.8l-1-15.2c-.5-8-1.4-17.7-2-21.5-3.8-26-7.3-58-7-64.5 0-3 0-11.4-.5-18.6l-.7-13-4.4-2.2L299 73V60h38v75.5"/>
+	</svg>
+	<canvas id="sleeves-mask" width="900" height="900"></canvas>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.min.js"></script>
+  <script src="https://cdn.rawgit.com/canvg/canvg/00855ed8/canvg.min.js"></script>
+  <script src="js/app.js"></script>
+</html>
++
