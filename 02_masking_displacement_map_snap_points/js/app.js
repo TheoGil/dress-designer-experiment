@@ -29,12 +29,34 @@ class Layer {
     }
 }
 
+class Mask {
+    constructor(selectElementId) {
+        var context = this;
+
+        // Rafraîchit le masque lorsqu'on change le select
+        this.selectElement = document.getElementById(selectElementId);
+        this.selectElement.addEventListener('change', function(){
+            context.update(context)
+        });
+
+        DD.masks.push(this);
+
+        // On met à jour l'object sleeve lors de l'init pour qu'il récupère le masque initial
+        this.update(context);
+    }
+
+    update (ctx) {
+        var selectedOption = ctx.selectElement.options[ctx.selectElement.options.selectedIndex];
+        var sleevesSVGMaskId = selectedOption.dataset.maskid;
+        ctx.svgMask = document.getElementById(sleevesSVGMaskId).outerHTML;
+        console.log(sleevesSVGMaskId);
+        DD.maskLayer.update();
+    }
+}
+
 // Dimensions des images telles que récupérées sur lesindépendantes
 var sceneWidth = 900;
 var sceneHeight = 900;
-var displacementFilter;
-var displacementSprite;
-var mask = null;
 
 var DD = {
     init: function () {
@@ -52,11 +74,6 @@ var DD = {
             .add('cutout', '../img/masking-experiments/model-cutout.png')
             .on('progress', DD.loadProgressHandler)
             .load(DD.onResourcesLoaded);
-
-        var slider = document.getElementById('js-dress-length-slider');
-        slider.addEventListener('input', function(e){
-            DD.dressMask.update(this.value);
-        })
 
         var toggleMaskBtn = document.getElementById('js-toggle-mask-btn');
         toggleMaskBtn.addEventListener('click', function(e){
@@ -82,52 +99,61 @@ var DD = {
         // and https://pixijs.github.io/examples/#/display/zorder.js
         DD.background = new Layer(resources.background);
         DD.dress = new Layer(resources.dress);
-        //DD.model = new Layer(resources.cutout);
 
+        /*
         // Add a displacement map to the dress, so the mask doesnt make "perfect computer cuts"
         displacementSprite = PIXI.Sprite.fromImage('../img/displacement-map.png');
         displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
         DD.pixi.stage.addChild(displacementSprite);
-        //DD.dress.sprite.filters = [displacementFilter];
+        DD.dress.sprite.filters = [displacementFilter];
+        */
 
-        DD.sleeves.init();
+        DD.maskLayer.init();
+        DD.sleeves = new Mask('js-select-sleeves');
+        //DD.neck = new Mask('js-select-neck');
+        DD.back = new Mask('js-select-back');
+        //DD.length = new Mask('js-select-length');
     },
-    sleeves: {
-        init: function(){
-			/*
-			 // AVEC UN GRAPHICS
-			 DD.dress.sprite.alpha = 0;
-			 var mask = new PIXI.Graphics();
-			 mask.beginFill(0xFF00BB, 0.25);
-			 mask.drawRect(100, 100, 200, 200);
-			 mask.endFill();
-			 DD.pixi.stage.addChild(mask);
-			 DD.background.sprite.mask = mask;
-			 */
-			/*
-            // AVEC UNE TEXTURE
-            mask = PIXI.Sprite.fromImage('../img/sleeves/sleeves-1-alpha-mask.png');
-            DD.pixi.stage.addChild(mask);
-            DD.dress.sprite.mask = mask;
-            */
-			// AVEC UN SVG TRANSFÉRÉ SUR UN CANVAS
-            var canvas = document.getElementById('sleeves-mask');
-            var ctx = canvas.getContext('2d');
+    masks: [],
+    maskLayer: {
+        init: function () {
+            this.canvasElement = document.getElementById('js-mask');
+            this.ctx = this.canvasElement.getContext('2d');
 
-            // Fill canvas with black
-            ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // Create mask sprite
+            this.sprite = new PIXI.Sprite();
+            this.texture = new PIXI.Texture.fromCanvas(this.canvasElement);
+            this.sprite.texture = this.texture;
 
-            // Draw our mask in white
-            var svg = document.getElementById('sleeves-1-mask').outerHTML;
-            ctx.fillStyle = "white";
-            ctx.drawSvg(svg, 0, 0, 900, 900);
-
-            //var texture =
-            mask = new PIXI.Sprite(new PIXI.Texture.fromCanvas(canvas));
-            DD.pixi.stage.addChild(mask);
-            DD.dress.sprite.mask = mask;
+            // Assign it to the dress srpite
+            DD.dress.sprite.mask = this.sprite;
         },
+        update: function () {
+            // Fill canvas with WHITE, white "let throught"
+            this.ctx.fillStyle = "white";
+            this.ctx.fillRect(0, 0, this.canvasElement.width, this.canvasElement.height);
+
+            // For each "element", draw selected mask to canvas in BLACK, black "masks"
+            this.ctx.fillStyle = "black";
+            for (var i = DD.masks.length - 1; i >= 0; i--) {
+                /*canvg(this.canvasElement, DD.masks[i].svgMask, {
+                    ignoreDimensions: true,
+                    ignoreClear: true
+                });*/
+
+                this.ctx.drawSvg(DD.masks[i].svgMask, 0, 0, 900, 900, {
+                    ignoreDimensions: true,
+                    ignoreClear: true
+                });
+            }
+
+            // Update texture, mask will auto-update
+            this.texture.update();
+        },
+        canvasElement: null,
+        ctx: null,
+        sprite: null,
+        texture: null,
     }
-}
+};
 DD.init();

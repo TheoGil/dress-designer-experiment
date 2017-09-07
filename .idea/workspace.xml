@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21011940-afb0-409b-bddf-19be0d4d01e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sleeves/sleeves-1-alpha-mask.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sleeves/sleeve1-mask.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/01 - masking + displacement map/index.html" afterPath="$PROJECT_DIR$/01_masking_displacement_map/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/01 - masking + displacement map/js/app.js" afterPath="$PROJECT_DIR$/01_masking_displacement_map/js/app.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/sleeves/sleeves-1-alpha-mask.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/masking-experiments/dress.png" afterPath="$PROJECT_DIR$/img/masking-experiments/dress.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html" afterPath="$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js" afterPath="$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,30 +21,83 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="-121">
+              <caret line="87" column="75" lean-forward="false" selection-start-line="87" selection-start-column="75" selection-end-line="87" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sleeves-2.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/sleeves-2.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sleeves-1.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/sleeves-1.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="back-2.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/back-2.svg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="131" column="37" lean-forward="false" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
               <folding>
-                <element signature="n#input#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#button#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#Layer#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#Mask#0" expanded="false" />
+                <element signature="n#!!block;n#update#0;n#Mask#0" expanded="false" />
+                <element signature="e#1946#2859#0" expanded="false" />
+                <element signature="e#2912#3199#0" expanded="false" />
+                <element signature="e#4389#4827#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sleeve1-mask.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask.svg">
+      <file leaf-file-name="back-1.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/back-1.svg">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="97" lean-forward="false" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
+            <state relative-caret-position="18">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>render</find>
+      <find>sleeves-mask</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>mask</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,8 +108,10 @@
         <option value="$PROJECT_DIR$/../../Téléchargements/image2vector (2).svg" />
         <option value="$PROJECT_DIR$/img/sleeves/sleeve-1-mask-2.svg" />
         <option value="$PROJECT_DIR$/img/sleeves/sleeve1-mask.svg" />
-        <option value="$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js" />
+        <option value="$PROJECT_DIR$/../../Téléchargements/sleeve1.svg" />
+        <option value="$PROJECT_DIR$/../../Téléchargements/sleeves4.svg" />
         <option value="$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html" />
+        <option value="$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js" />
       </list>
     </option>
   </component>
@@ -92,6 +146,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -102,38 +157,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dress-designer-experiment" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dress-designer-experiment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dress-designer-experiment" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dress-designer-experiment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dress-designer-experiment" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleeves" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -171,7 +194,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -185,6 +207,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img/masking-experiments" />
       <recent name="$PROJECT_DIR$/img/sleeves" />
       <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/01_masking_displacement_map" />
@@ -266,17 +289,18 @@
       <workItem from="1504614703111" duration="1417000" />
       <workItem from="1504697238087" duration="2006000" />
       <workItem from="1504714283283" duration="802000" />
+      <workItem from="1504787632497" duration="8849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11692000" />
+    <option name="totallyTimeSpent" value="20541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="390" width="1686" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25826192" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2613219" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -310,10 +334,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#input#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#button#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="97" lean-forward="false" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -329,10 +366,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding>
-            <element signature="n#input#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#button#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -355,10 +389,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="n#input#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#button#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -401,12 +432,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/masking-experiments/model-cutout.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve-1-mask-2.svg" />
+    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask-3.png" />
+    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask-2.png" />
+    <entry file="file://$PROJECT_DIR$/img/sleeves/parrotmustache.gif" />
+    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="97" lean-forward="false" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/dress.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/img/model.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/masking-experiments/model-cutout.png">
+    <entry file="file://$PROJECT_DIR$/img/sleeve4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/sleeve1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -416,37 +474,126 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve-1-mask-2.svg" />
-    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask-3.png" />
-    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask-2.png" />
-    <entry file="file://$PROJECT_DIR$/img/sleeves/parrotmustache.gif" />
+    <entry file="file://$PROJECT_DIR$/../../Téléchargements/sleeve1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="121" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/img/sleeves/sleeves-1-alpha-mask.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js">
+    <entry file="file://$PROJECT_DIR$/../../Téléchargements/sleeves4.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="131" column="1" lean-forward="true" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+        <state relative-caret-position="36">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/sleeves/sleeve1-mask.svg">
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/Brut/col-v.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="97" lean-forward="false" selection-start-line="0" selection-start-column="97" selection-end-line="0" selection-end-column="97" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/Brut/col-rond.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/Brut/dos-court.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/Brut/dos-long.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/Brut/length1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/Brut/length2.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/back-1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/back-2.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/sleeves-1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Téléchargements/Masques Dress Designer/test 2/sleeves-2.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02_masking_displacement_map_snap_points/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="-121">
+          <caret line="87" column="75" lean-forward="false" selection-start-line="87" selection-start-column="75" selection-end-line="87" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02_masking_displacement_map_snap_points/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="131" column="37" lean-forward="false" selection-start-line="131" selection-start-column="37" selection-end-line="131" selection-end-column="37" />
           <folding>
-            <element signature="n#input#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#button#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#Layer#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Mask#0" expanded="false" />
+            <element signature="n#!!block;n#update#0;n#Mask#0" expanded="false" />
+            <element signature="e#1946#2859#0" expanded="false" />
+            <element signature="e#2912#3199#0" expanded="false" />
+            <element signature="e#4389#4827#0" expanded="false" />
           </folding>
         </state>
       </provider>
