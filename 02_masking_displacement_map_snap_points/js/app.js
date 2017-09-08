@@ -57,6 +57,7 @@ class Mask {
 // Dimensions des images telles que récupérées sur lesindépendantes
 var sceneWidth = 900;
 var sceneHeight = 900;
+var tilingSprite = null;
 
 var DD = {
     init: function () {
@@ -72,16 +73,13 @@ var DD = {
             .add('background', '../img/model.png')
             .add('dress', '../img/masking-experiments/dress.png')
             .add('cutout', '../img/masking-experiments/model-cutout.png')
+            .add('pattern', '../img/patterns/drops2.png')
             .on('progress', DD.loadProgressHandler)
             .load(DD.onResourcesLoaded);
 
-        var toggleMaskBtn = document.getElementById('js-toggle-mask-btn');
-        toggleMaskBtn.addEventListener('click', function(e){
-            if (DD.dress.sprite.mask) {
-                DD.dress.sprite.mask = null
-            } else {
-                DD.dress.sprite.mask = DD.dressMask.graphics
-            }
+        var toggleDebugBtn = document.getElementById('js-toggle-mask-btn');
+        toggleDebugBtn.addEventListener('click', function(e){
+            document.getElementById('js-mask').classList.toggle('debug');
         })
     },
     loadProgressHandler: function(loader, resource){
@@ -100,19 +98,13 @@ var DD = {
         DD.background = new Layer(resources.background);
         DD.dress = new Layer(resources.dress);
 
-        /*
-        // Add a displacement map to the dress, so the mask doesnt make "perfect computer cuts"
-        displacementSprite = PIXI.Sprite.fromImage('../img/displacement-map.png');
-        displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-        DD.pixi.stage.addChild(displacementSprite);
-        DD.dress.sprite.filters = [displacementFilter];
-        */
-
         DD.maskLayer.init();
         DD.sleeves = new Mask('js-select-sleeves');
-        //DD.neck = new Mask('js-select-neck');
+        DD.neck = new Mask('js-select-neck');
         DD.back = new Mask('js-select-back');
-        //DD.length = new Mask('js-select-length');
+        DD.length = new Mask('js-select-length');
+
+        DD.patterns.init(resources.pattern);
     },
     masks: [],
     maskLayer: {
@@ -154,6 +146,16 @@ var DD = {
         ctx: null,
         sprite: null,
         texture: null,
+    },
+    patterns: {
+        init: function (resource) {
+            //var patternSprite = new PIXI.Sprite(resource.texture);
+            tilingSprite = new PIXI.TilingSprite(resource.texture, window.innerWidth, window.innerHeight);
+            DD.pixi.stage.addChild(tilingSprite);
+            tilingSprite.blendMode = PIXI.BLEND_MODES.HARD_LIGHT;
+            tilingSprite.mask = DD.maskLayer.sprite;
+        }
     }
+
 };
 DD.init();
